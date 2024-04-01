@@ -87,6 +87,12 @@ namespace InMemoryCache.Controllers
             return Content($"Id:{user.Id} Age:{user.Age} FullName:{user.FullName}");
         }
 
+        public IActionResult RemoveCache()
+        {
+            _memoryCache.Remove("date");
+            return Content("date cache deleted");
+        }
+
         public IActionResult Index()
         {
             return View();
